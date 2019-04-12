@@ -1,0 +1,52 @@
+.todo-item {
+  height: 4rem;
+  border: 3px solid white;
+  border-radius: 14px;
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0 20px;
+
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.finished {
+    & > .task {
+      text-decoration: line-through;
+    }
+  }
+
+  & > .task,
+  & > .date {
+    flex: 1 0 0;
+    line-height: 29px;
+  }
+
+  & > .task {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  & > .date {
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
+
+  & > .remove {
+    font-size: 1.2rem;
+    font-weight: 300;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    &:hover {
+      font-weight: 500;
+    }
+  }
+}
