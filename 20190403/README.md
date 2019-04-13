@@ -19,9 +19,6 @@
   - [4.3.1 Properties Conversion](#431-properties-conversion)
   - [4.3.2 Validation](#432-validation)
 - [5. Profile](#5-profile)
-- [6. Logging](#6-logging)
-- [7. Test](#7-test)
-  - [7.1 슬라이스 테스트](#71-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EC%8A%A4-%ED%85%8C%EC%8A%A4%ED%8A%B8)
 
 # 1. 스프링 부트란?
 
@@ -664,20 +661,3 @@ tutorial:
 ```
 
 `include`에 `mq-dev`, `db-dev`등을 추가하면 운영 환경(로컬, 개발, QA, 프로덕션)에 맞는 구성도 할 수 있다. 그것도 꽤 깔끔하게.  
-
-# 6. Logging
-
-# 7. Test
-
-스프링 테스트 어노테이션이 있다.  
-
-```java
-@SpringBootTest
-```
-
-여기서 `webEnvironment`가 있는데 `WebEnvironment`라는 `enum`을 받는다. 대표적으로 `MOCK`, `RANDOM_PORT`가 있다.  
-Mock은 말 그대로 서버가 뜨지 않고 mock을 이용한다. 하지만 `RANDOM_PORT`를 쓰게되면 서버가 뜨며 `TestRestTemplate`과 같은 것을 사용해야한다.  
-
-SpringBootTest는 애플리케이션으로 가서 모든 Bean을 찾아서 스캔한다. 또한 Mock이 있으면 해당 Bean을 교체해준다.  
-
-## 7.1 슬라이스 테스트
